@@ -44,6 +44,10 @@ spring:
           uri: lb://image-service
           predicates:
             - Path=/api/v1/image/**
+        - id: handwrite-recognition-service
+          uri: lb://handwrite-recognition-service
+          predicates:
+            - Path=/api/v1/handwrite/**
 
 eureka:
   client:
@@ -65,4 +69,6 @@ springdoc:
         url: https://nansan.site/api/v1/en/v3/api-docs
       - name: Image 서비스
         url: https://nansan.site/api/v1/image/v3/api-docs
+      - name: Handwrite-Recognition 서비스
+        url: https://nansan.site/api/v1/handwrite/v3/api-docs
     use-root-path: true
