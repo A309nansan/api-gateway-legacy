@@ -86,19 +86,10 @@ public class JwtFilter implements GlobalFilter {
         return path.matches("^/api/v\\d+/user/login$") ||
                 path.matches("^/api/v\\d+/user/logout$") ||
                 path.matches("^/api/v\\d+/user/reissue$") ||
-                path.startsWith("/v3/api-docs") ||
-                path.startsWith("/v3/api-docs.yaml") ||
-                path.startsWith("/swagger-ui") ||
-                path.startsWith("/swagger-resources") ||
-                path.startsWith("/swagger-ui.html") ||
-                path.startsWith("/swagger-ui/index.html") ||
-                path.startsWith("/user/swagger-resources") ||
-                path.startsWith("/user/swagger-ui.html") ||
-                path.startsWith("/user/swagger-ui/index.html") ||
-                path.startsWith("/user/swagger-ui") ||
                 path.matches("^/api/v\\d+/[a-zA-Z0-9-]+/v3/api-docs(?:\\.yaml)?$") ||   // JSON & YAML
                 path.matches("^/api/v\\d+/[a-zA-Z0-9-]+/swagger-ui(?:/.*)?$") ||        // swagger-ui 및 하위 경로
-                path.matches("^/api/v\\d+/[a-zA-Z0-9-]+/swagger-resources(?:/.*)?$");   // swagger-resources 및 하위 경로
+                path.matches("^/api/v\\d+/[a-zA-Z0-9-]+/swagger-resources(?:/.*)?$") ||   // swagger-resources 및 하위 경로
+                path.matches("^/api/v\\d+/handwrite(?:/.*)?$");
     }
 
     /** 에러 응답 처리 */
